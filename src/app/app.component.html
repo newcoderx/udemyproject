@@ -1,6 +1,20 @@
-<div class="container">
+<div [ngStyle]="{'background-color': color}"></div>
+<hr>
+<p appHighlight [defaultColor]="'black'" [highlightColor]="'orange'">Ich bin die directive</p>
+<hr>
+<p *ngIf="switch">nicht immer da</p>
+<button class="btn btn-primary" (click)="switch = !switch">Switch</button>
+<hr>
+<p>*ngfor</p>
+<ul>
+  <li *ngFor="let item of elemente; let i = index">{{item}} Index--{{i}}</li>
+</ul>
+<hr>
+<p>Text zu sehen directive</p>
+<div *appUnless="switch">sehe den text</div>
+<!-- <div class="container">
   <app-header></app-header>
 </div>
 <hr>
 <app-recipe></app-recipe>
-<app-shoppinglist></app-shoppinglist>
+<app-shoppinglist></app-shoppinglist> -->
